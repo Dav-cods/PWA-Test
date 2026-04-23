@@ -17,6 +17,12 @@ function App() {
     }
   }
 
+  function decrement () {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  }
+
   async function sendNotification() {
     const permission = await Notification.requestPermission();
 
@@ -43,6 +49,7 @@ function App() {
       <h3>Let's just add a little something to keep us busy 😉</h3>
 
       <button onClick={incrementCount}>Click me!</button>
+      <button onClick={decrement}>Undo click</button>
       <p>You've clicked the button {count} times.</p>
       <button onClick={() => setCount(0)}>Reset</button>
 
